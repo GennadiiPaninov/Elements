@@ -1,6 +1,6 @@
 import s from './app.module.scss'
 
-import { Button1, HoverMe } from './shared'
+import { Button1, HoverMe, Image1 } from './shared'
 
 export function App() {
   return (
@@ -10,6 +10,9 @@ export function App() {
       </div>
       <div className={s.TextPlace}>
         <HoverMe />
+      </div>
+      <div className={s.imagePlace}>
+        <Image1 />
       </div>
     </div>
   )
