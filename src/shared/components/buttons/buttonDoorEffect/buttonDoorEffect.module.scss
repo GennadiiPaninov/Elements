@@ -1,0 +1,20 @@
+@import './src/styles/mixins';
+
+
+.Container{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:3vw;
+}
+.active {
+  @include buttonWithEffects;
+  background-color: #0fd850;
+  border: none;
+  &:hover{
+    background-color: #0fd850;
+  }
+}
+

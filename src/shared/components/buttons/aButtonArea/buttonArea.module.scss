@@ -1,8 +1,22 @@
 .container{
-  width: 400px;
-  height: 150px;
-  border:1px solid red ;
+  width: 100%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: start;
   justify-content: center;
+  gap: 3vh;
+  margin-top: 2vw;
+}
+.containerWithWidth{
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  gap: 3vh;
+}
+@media screen and (max-width: 720px){
+  .containerWithWidth{
+    width: 150px;
+  }
 }

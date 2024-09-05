@@ -1,17 +1,25 @@
-.button{
+.buttonsOneContainer{
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap:3vw;
+}
+.buttonOne{
   width: 9em;
   height: 3em;
   border-radius: 30em;
-  font-size: 15px;
   font-family: inherit;
-  border:none;
+  border:1px solid var(--color-info-700);
   position: relative;
   overflow: hidden;
   z-index: 1;
   box-shadow: 6px 6px 12px  #c5c5c5,
   -6px -6px 12px  #ffffff;
+
 }
-button::before{
+.buttonOne::before{
   content: '';
   width: 0;
   height: 3em;
@@ -24,6 +32,27 @@ button::before{
   display: block;
   z-index: -1;
 }
-button:hover::before{
+.buttonOne:hover::before{
   width: 9em;
+}
+.buttonOne:disabled {
+  pointer-events: none;
+}
+
+.buttonOne:disabled::before {
+  transition: none;
+  width: 0;
+}
+.buttonOneActive{
+  width: 9em;
+  height: 3em;
+  border-radius: 30em;
+  font-family: inherit;
+  border:none;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 6px 6px 12px  #c5c5c5,
+  -6px -6px 12px  #ffffff;
+  background-image: linear-gradient(to right, #0fd850 0%, #f9f047 100%);
 }

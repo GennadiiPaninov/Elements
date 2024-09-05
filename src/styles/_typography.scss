@@ -1,20 +1,24 @@
 :root {
   --font-family-primary: 'Roboto', sans-serif;
 
-  // line heights
-  --line-height-s: 16px;
-  --line-height-m: 24px;
-  --line-height-l: 36px;
+  /* globals */
+  --font-size-xs: 10px;
+  --font-size-s: 12px;
+  --font-size-m: 14px;
+  --font-size-l: 16px;
+  --font-size-x: 18px;
+  --font-size-xl: 20px;
+  --font-size-xxl: 26px;
 
-  // font sizes
-  --font-size-xs: 0.75rem;
-  --font-size-s: 0.875rem;
-  --font-size-m: 1rem;
-  --font-size-l: 1.125rem;
-  --font-size-xl: 1.25rem;
-  --font-size-xxl: 1.625rem;
+  /* line-heights */
+  --line-height-s: 12px;
+  --line-height-m: 14px;
+  --line-height-l: 24px;
+  --line-height-xl: 36px;
 
-  // font weights
+  /* font-weights */
   --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
 }

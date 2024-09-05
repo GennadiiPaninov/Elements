@@ -9,9 +9,12 @@ html {
 *,
 *::before,
 *::after {
+  margin: 0px;
   box-sizing: border-box;
 }
-
+//*{
+//  outline: 4px solid red!important;
+//}
 input,
 button,
 select,
@@ -37,5 +40,5 @@ body {
   line-height: var(--line-height-m);
   color: var(--color-dark-900);
 
-  background-color: var(--color-light-100);
+  background-color: var(--color-light-300);
 }
