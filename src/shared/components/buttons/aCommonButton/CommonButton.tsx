@@ -7,7 +7,15 @@ export type ButtonProps<T extends ElementType> = {
   children?: ReactNode
   fullWidth?: boolean
   icon?: ReactNode
-  variant?: 'buttonOne' | 'doorEffect' | 'icon' | 'link' | 'outlined' | 'primary' | 'secondary'
+  variant?:
+    | 'blank'
+    | 'buttonOne'
+    | 'doorEffect'
+    | 'icon'
+    | 'link'
+    | 'outlined'
+    | 'primary'
+    | 'secondary'
 } & ComponentPropsWithoutRef<T>
 export const Button = forwardRef(
   <T extends ElementType = 'button'>(

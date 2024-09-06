@@ -7,8 +7,9 @@ type Props = {
   children?: ReactNode
   classNameContainer?: string
   classNameRoot?: string
+  noWrap?: boolean
 }
-export const Container = ({ children, classNameContainer, classNameRoot }: Props) => {
+export const Container = ({ children, classNameContainer, classNameRoot, noWrap }: Props) => {
   const className = {
     classNameContainer: clsx(s.container, classNameContainer),
     classNameRoot: clsx(s.root, classNameRoot),
@@ -16,7 +17,8 @@ export const Container = ({ children, classNameContainer, classNameRoot }: Props
 
   return (
     <div className={className.classNameRoot}>
-      <div className={className.classNameContainer}>{children}</div>
+      {!noWrap && <div className={className.classNameContainer}>{children}</div>}
+      {noWrap && children}
     </div>
   )
 }

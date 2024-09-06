@@ -28,7 +28,7 @@ export const DropDownMenu = () => {
         />
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Content className={s.menuContent} sideOffset={5}>
+      <DropdownMenu.Content className={s.menuContent} sideOffset={2}>
         <DropdownMenu.Sub>
           <DropdownMenu.SubTrigger className={s.menuItem}>
             <Button className={s.menuItemButton} variant={'link'}>

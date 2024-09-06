@@ -22,8 +22,9 @@
     "types": ["node"],
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    "outDir": "./dist", // Add this line
+    "rootDir": "./src" // Ensure this is set
   },
   "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }]
 }

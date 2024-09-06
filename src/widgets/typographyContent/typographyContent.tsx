@@ -6,6 +6,7 @@ import { TypographyItem } from './typographyItem'
 export const TypographyContent = () => {
   return (
     <Container>
+
       <Typography variant={'h2'}>English Alphabet</Typography>
       <div className={s.container}>
         {englishAlphabet.map(item => {
