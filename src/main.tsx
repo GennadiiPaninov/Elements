@@ -1,3 +1,4 @@
+import { Provider } from 'react-redux'
 import { BrowserRouter } from 'react-router-dom'
 
 import { createRoot } from 'react-dom/client'
@@ -5,9 +6,12 @@ import { createRoot } from 'react-dom/client'
 import './styles/index.scss'
 
 import { App } from './App'
+import { store } from './shared/assets/api/store'
 
 createRoot(document.getElementById('root') as HTMLElement).render(
   <BrowserRouter>
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
   </BrowserRouter>
 )

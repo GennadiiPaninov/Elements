@@ -1,6 +1,7 @@
 .headerSlogan{
   width: 100%;
-  background: var(--color-dark-900);
+  --tw-bg-opacity: 1;
+  background-color: rgb(14 20 26 / var(--tw-bg-opacity));
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -12,7 +13,6 @@
 }
 @media (max-width: 720px) {
   .headerSlogan{
-    background: var(--color-dark-900);
     display: flex;
     align-items: center;
     padding: 5px;

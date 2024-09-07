@@ -1,5 +1,6 @@
 export * from './buttons'
 export * from './container'
 export * from './images'
+export * from './input'
 export * from './textElements'
 export * from './typography'

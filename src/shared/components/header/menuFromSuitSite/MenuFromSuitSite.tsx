@@ -1,9 +1,9 @@
 import s from './menuFromSuitSite.module.scss'
 
-import { Account } from '../../../../public/icon/account'
-import { BurgerMenuSuitStore } from '../../../../public/icon/burgerMenuSuitStore'
-import { Busket } from '../../../../public/icon/busket'
+import { rootActions } from '../../../../entries/rootReducer/rootReducer'
+import { Account, BurgerMenuSuitStore, Busket } from '../../../../public'
 import { useIsMobile } from '../../../assets'
+import { useAppDispatch } from '../../../assets/api/store'
 import { menuItems } from '../../../assets/constans'
 import { Button } from '../../buttons'
 import { Slogan } from '../../slogan/Slogan'
@@ -12,6 +12,11 @@ import { Typography } from '../../typography'
 export const MenuFromSuitSite = () => {
   const isOneThousand = useIsMobile(1050)
   const isMobile = useIsMobile(720)
+  const dispatch = useAppDispatch()
+
+  const handleChangeRootMenuState = () => {
+    dispatch(rootActions.setMenuState())
+  }
 
   return (
     <>
@@ -64,7 +69,11 @@ export const MenuFromSuitSite = () => {
             )}
             {isOneThousand && (
               <li className={s.menuListItem}>
-                <Button icon={<BurgerMenuSuitStore />} variant={'blank'}></Button>
+                <Button
+                  icon={<BurgerMenuSuitStore />}
+                  onClick={handleChangeRootMenuState}
+                  variant={'blank'}
+                />
               </li>
             )}
           </ul>
