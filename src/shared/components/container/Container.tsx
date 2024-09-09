@@ -1,24 +1,44 @@
-import { ReactNode } from 'react'
+import {
+  ComponentPropsWithoutRef,
+  ElementRef,
+  ElementType,
+  LegacyRef,
+  ReactNode,
+  Ref,
+  forwardRef,
+} from 'react'
 
 import { clsx } from 'clsx'
 
 import s from './container.module.scss'
-type Props = {
+type Props<T extends ElementType> = {
+  as?: T
   children?: ReactNode
   classNameContainer?: string
   classNameRoot?: string
   noWrap?: boolean
-}
-export const Container = ({ children, classNameContainer, classNameRoot, noWrap }: Props) => {
-  const className = {
-    classNameContainer: clsx(s.container, classNameContainer),
-    classNameRoot: clsx(s.root, classNameRoot),
-  }
+  ref?: LegacyRef<HTMLElement>
+} & ComponentPropsWithoutRef<T>
+export const Container = forwardRef(
+  <T extends ElementType = 'div'>(props: Props<T>, ref: Ref<ElementRef<T>>) => {
+    const {
+      as: Component = 'div',
+      children,
+      classNameContainer,
+      classNameRoot,
+      noWrap,
+      ...rest
+    } = props
+    const className = {
+      classNameContainer: clsx(s.container, classNameContainer),
+      classNameRoot: clsx(s.root, classNameRoot),
+    }
 
-  return (
-    <div className={className.classNameRoot}>
-      {!noWrap && <div className={className.classNameContainer}>{children}</div>}
-      {noWrap && children}
-    </div>
-  )
-}
+    return (
+      <div className={className.classNameRoot} {...rest} ref={ref}>
+        {!noWrap && <div className={className.classNameContainer}>{children}</div>}
+        {noWrap && children}
+      </div>
+    )
+  }
+)

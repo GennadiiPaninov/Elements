@@ -6,6 +6,7 @@ import s from './suitStoreMenu.module.scss'
 
 import { rootActions } from '../../../entries/rootReducer/rootReducer'
 import { BackArrow, Calendar, ContactUs, Help, RightArrow } from '../../../public'
+import { useIsMobile } from '../../assets'
 import { useAppDispatch, useAppSelector } from '../../assets/api/store'
 import { menuItems } from '../../assets/constans'
 import { ImageContainer } from '../ImageContainer'
@@ -27,7 +28,7 @@ export const SuitStoreMenu = () => {
     icon: ReactNode
     title: string
   }[]
-
+  const isMobile = useIsMobile(1050)
   const dispatch = useAppDispatch()
   const handleChangeRootMenuState = (item: string) => {
     if (menuShop) {
@@ -41,8 +42,7 @@ export const SuitStoreMenu = () => {
     dispatch(rootActions.setMenuShop({ menuState: item }))
   }
 
-  console.log(rootMenu)
-  if (!rootMenu) {
+  if (!rootMenu || !isMobile) {
     return
   }
 

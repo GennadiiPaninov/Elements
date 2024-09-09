@@ -1,0 +1,33 @@
+.root{
+  position: absolute;
+  width: 100%;
+  min-height: 20vh;
+  background: var(--color-light-300);
+  //background: var(--color-light-900);
+  padding: 60px;
+}
+.container{
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 5%;
+
+}
+.iItemContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.menuListItem{
+  list-style-type: none;
+  width: 100%;
+}
+.menu{
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.listButton{
+  padding: 0;
+}

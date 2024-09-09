@@ -1,8 +1,7 @@
 import s from './menuFromSuitSite.module.scss'
 
 import { rootActions } from '../../../../entries/rootReducer/rootReducer'
-import { Account, BurgerMenuSuitStore, Busket } from '../../../../public'
-import { Cross } from '../../../../public/icon/Cross'
+import { Account, BurgerMenuSuitStore, Busket, Cross } from '../../../../public'
 import { useIsMobile } from '../../../assets'
 import { useAppDispatch, useAppSelector } from '../../../assets/api/store'
 import { menuItems } from '../../../assets/constans'
@@ -15,9 +14,13 @@ export const MenuFromSuitSite = () => {
   const isMobile = useIsMobile(720)
   const dispatch = useAppDispatch()
   const rootMenu = useAppSelector(state => state.rootState.menuState)
-  const handleChangeRootMenuState = () => {
-    dispatch(rootActions.setMenuState({ menuState: rootMenu == '' ? 'RootMenu' : '' }))
+  const handleChangeRootMenuState = (item: string) => {
+    item
+      ? dispatch(rootActions.setMenuState({ menuState: item }))
+      : dispatch(rootActions.setMenuState({ menuState: rootMenu == '' ? 'RootMenu' : '' }))
   }
+
+  console.log(rootMenu)
 
   return (
     <>
@@ -38,7 +41,10 @@ export const MenuFromSuitSite = () => {
               {menuItems.map(item => {
                 return (
                   <li className={s.menuListItem} key={item.title}>
-                    <Button variant={'blank'}>
+                    <Button
+                      onMouseEnter={() => handleChangeRootMenuState(item.title)}
+                      variant={'blank'}
+                    >
                       <Typography variant={'regular_text-14'}>{item.title}</Typography>
                     </Button>
                   </li>
@@ -72,7 +78,7 @@ export const MenuFromSuitSite = () => {
               <li className={s.menuListItem}>
                 <Button
                   icon={rootMenu ? <Cross /> : <BurgerMenuSuitStore />}
-                  onClick={handleChangeRootMenuState}
+                  onClick={() => handleChangeRootMenuState('')}
                   variant={'blank'}
                 />
               </li>
