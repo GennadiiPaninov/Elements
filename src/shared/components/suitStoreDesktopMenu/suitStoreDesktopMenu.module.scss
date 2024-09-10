@@ -1,17 +1,31 @@
 .root{
   position: absolute;
   width: 100%;
-  min-height: 20vh;
   background: var(--color-light-300);
-  //background: var(--color-light-900);
   padding: 60px;
 }
+.rootOther{
+  position: absolute;
+  width: 100%;
+  background: var(--color-light-300);
+  padding: 60px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: row;
+  gap: 40px;
+}
+.menuContainerWithTitle{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .container{
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
   grid-column-gap: 5%;
-
 }
 .iItemContainer{
   display: flex;
@@ -31,3 +45,4 @@
 .listButton{
   padding: 0;
 }
+
