@@ -10,8 +10,15 @@ type Props = {
   classNameImg?: string
   classNameRoot?: string
   image: string
+  withoutFigcaption?: boolean
 }
-export const ImageContainer = ({ children, classNameImg, classNameRoot, image }: Props) => {
+export const ImageContainer = ({
+  children,
+  classNameImg,
+  classNameRoot,
+  image,
+  withoutFigcaption,
+}: Props) => {
   const style = {
     img: clsx(s.img, classNameImg),
   }
@@ -20,7 +27,9 @@ export const ImageContainer = ({ children, classNameImg, classNameRoot, image }:
     <Container classNameRoot={classNameRoot && classNameRoot} noWrap>
       <figure className={s.ImageContainerFigure}>
         <img alt={''} className={style.img} src={image} />
-        <figcaption className={s.ImageContainerFigcaption}> {children}</figcaption>
+        {!withoutFigcaption && (
+          <figcaption className={s.ImageContainerFigcaption}> {children}</figcaption>
+        )}
       </figure>
     </Container>
   )

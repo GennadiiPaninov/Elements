@@ -1,8 +1,7 @@
-import s from '../../../shared/components/suitStoreMenu/suitStoreMenu.module.scss'
-
-import { Button, Container, ImageContainer, Typography } from '../../../shared'
+import { Container } from '../../../shared'
 import { SuitStoreDesktopMenu } from '../../../shared/components/suitStoreDesktopMenu/SuitStoreDecktopMenu'
 import { SuitStoreMenu } from '../../../shared/components/suitStoreMenu/SuitStoreMenu'
+import { MainPage } from './pages/mainPage/MainPage'
 
 export const SuitStore = () => {
   return (
@@ -10,13 +9,7 @@ export const SuitStore = () => {
       {' '}
       <SuitStoreMenu />
       <SuitStoreDesktopMenu />
-      <ImageContainer image={'https://smartcasuals.ru/wp-content/uploads/2021/06/1.jpg'}>
-        <Button className={s.listButton} variant={'blank'}>
-          <Typography className={s.menuItemSuitGroup} variant={'regular_text-16'}>
-            Suit a Group
-          </Typography>
-        </Button>
-      </ImageContainer>
+      <MainPage />
     </Container>
   )
 }

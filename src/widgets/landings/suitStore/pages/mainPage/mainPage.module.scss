@@ -1,0 +1,90 @@
+.rootContainer {
+  flex-direction: column;
+}
+
+.titleContainer {
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+  padding: 20% 0 20% 3%;
+  height: 80vh;
+  gap: 40px;
+  font-family: utopia-std, Times New Roman, Times, serif;
+}
+.titleStyle{
+  font-size: 40px;
+}
+.titleCostStyle{
+  font-size: 20px;
+}
+.panelContainer{
+  justify-content: start;
+  gap: 5px;
+}
+.listButton{
+  position: relative;
+}
+.listButton::after{
+  content:"";
+  position: absolute;
+  top: 40px;
+  width: 80%;
+  height: 1px;
+  background: #d1691e;
+  transition: top 1s ease;
+}
+.listButton:hover::after {
+  top: 25px;
+}
+
+.buttonTitle{
+  letter-spacing: 2px;
+}
+
+.imgContainer {
+  height: 80vh;
+}
+@media (max-width: 720px) {
+  .imgContainer{
+    flex-direction: column;
+    height:auto;
+  }
+  .titleContainer{
+    height: auto;
+    padding: 10% 2% 10% 2%;
+    align-items: center;
+  }
+  .titleCostStyle{
+    text-align: center;
+  }
+  .panelContainer{
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .listButton::after{
+    content:"";
+    position: absolute;
+    top: 25px;
+    width: 80%;
+    height: 1px;
+    background: #d1691e;
+    transition: top 1s ease;
+  }
+  .listButton:hover::after {
+    top: 25px;
+  }
+}
+
+.advantagesContainer {
+  height: 30vh;
+  padding:2%;
+}
+.advantagesItem{
+  width: 25%;
+  gap: 15px;
+
+}
+.advantagesItemText{
+  display: flex;
+  flex-direction: column;
+}
