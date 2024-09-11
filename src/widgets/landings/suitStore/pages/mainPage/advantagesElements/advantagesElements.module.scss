@@ -1,5 +1,5 @@
 .advantagesContainer {
-  height: 30vh;
+  height: 20vh;
   padding:2%;
   flex-wrap: wrap;
 }
@@ -33,6 +33,10 @@
   }
 }
 @media (max-width: 720px) {
+  .advantagesContainer {
+    height: 20vh;
+
+  }
   .advantagesItem{
     max-width: 100%;
     display: flex !important;

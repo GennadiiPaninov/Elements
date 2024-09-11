@@ -1,0 +1,54 @@
+.root{
+  padding: 20px 0 20px 0;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--color-light-100);
+}
+.itemContainer{
+  position: relative;
+  width: 45%;
+}
+.item{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  color: var(--color-dark-500);
+  top: 60%;
+  gap: 30px;
+}
+.itemContainer:first-child{
+  color: var(--color-light-900)!important;
+}
+.listButton{
+  position: relative;
+}
+.listButton::after{
+  content:"";
+  position: absolute;
+  top: 40px;
+  width: 80%;
+  height: 1px;
+  background: var(--color-light-100);
+  transition: top 1s ease;
+}
+.listButton:hover::after {
+  top: 25px;
+}
+@media (max-width: 720px) {
+  .itemContainer{
+    width: 80%;
+  }
+  .listButton::after{
+    content:"";
+    position: absolute;
+    top: 25px;
+    width: 80%;
+    height: 1px;
+    background: var(--color-light-100);
+    transition: top 1s ease;
+  }
+  .listButton:hover::after {
+    top: 25px;
+  }
+}
