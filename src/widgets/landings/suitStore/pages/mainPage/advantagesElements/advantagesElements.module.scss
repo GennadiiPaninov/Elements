@@ -1,0 +1,43 @@
+.advantagesContainer {
+  height: 30vh;
+  padding:2%;
+  flex-wrap: wrap;
+}
+.slick{
+  width: 100vw;
+  height: 13vh;
+}
+.slickDotsClass  li button:before{
+  color: #d1691e!important;
+}
+.advantagesItem{
+  max-width: 25%;
+  gap: 15px;
+
+}
+.advantagesItemText{
+  display: flex;
+  flex-direction: column;
+}
+@media (max-width: 1050px) {
+  .advantagesContainer {
+    height: 30vh;
+
+  }
+  .advantagesContainer {
+    height: 30vh;
+
+  }
+  .advantagesItem{
+    max-width: 50%;
+  }
+}
+@media (max-width: 720px) {
+  .advantagesItem{
+    max-width: 100%;
+    display: flex !important;
+    flex-direction: row;
+    align-content: center;
+    padding: 5%;
+  }
+}
