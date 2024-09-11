@@ -3,7 +3,15 @@ import Slider from 'react-slick'
 
 import s from './additionalInformationSlider.module.scss'
 
-import { Button, Container, ImageContainer, Typography } from '../../../../../../shared'
+import { RightArrowFromSlider } from '../../../../../../public'
+import { LeftArrowFromSlider } from '../../../../../../public/icon/LeftArrowFromSlider'
+import {
+  Button,
+  Container,
+  ImageContainer,
+  Typography,
+  useIsMobile,
+} from '../../../../../../shared'
 export interface CustomArrowProps {
   className?: string | undefined
   currentSlide?: number | undefined
@@ -12,30 +20,26 @@ export interface CustomArrowProps {
   style?: CSSProperties | undefined
 }
 function SampleNextArrow(props: CustomArrowProps) {
-  const { className, onClick, style } = props
+  const { onClick } = props
 
   return (
-    <div
-      className={className}
-      onClick={onClick}
-      style={{ ...style, background: 'red', display: 'block' }}
-    />
+    <Button onClick={onClick} variant={'blank'}>
+      <RightArrowFromSlider />
+    </Button>
   )
 }
 
 function SamplePrevArrow(props: CustomArrowProps) {
-  const { className, onClick, style } = props
+  const { onClick } = props
 
   return (
-    <div
-      className={className}
-      onClick={onClick}
-      style={{ ...style, background: 'green', display: 'block' }}
-    />
+    <Button onClick={onClick} variant={'blank'}>
+      <LeftArrowFromSlider />
+    </Button>
   )
 }
 export const AdditionalInformationSlider = () => {
-  // const isMobile = useIsMobile(720)
+  const isMobile = useIsMobile(720)
   const [value, setValue] = useState<number>(0)
   const additionInformation = [
     {
@@ -65,9 +69,11 @@ export const AdditionalInformationSlider = () => {
     title: string
   }[]
   const settings = {
-    beforeChange: (_, newIndex: number) => setValue(newIndex),
+    arrows: !isMobile,
+    beforeChange: (oldIndex: number, newIndex: number) =>
+      setValue(newIndex !== 1 ? newIndex : oldIndex),
     className: s.slick,
-    dots: true,
+    dots: isMobile,
     dotsClass: `slick-dots slick-thumb ${s.slickDotsClass}`,
     infinite: true,
     nextArrow: <SampleNextArrow />,

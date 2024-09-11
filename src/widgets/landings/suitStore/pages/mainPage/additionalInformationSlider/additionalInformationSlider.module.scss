@@ -5,7 +5,13 @@
 }
 .slick{
   width: 100%;
+  display: flex;
 }
+.slick div{
+  width: 100%;
+  display: flex;
+}
+
 .image{
   height:80vh;
 }
@@ -45,7 +51,7 @@ color: var(--color-dark-100);
   }
   .informationContainer{
     margin-top: 20px;
-    width: 80%;
+    width: 100%;
     flex-direction: column;
     align-items: center;
     font-family: Halcom, sans-serif;
