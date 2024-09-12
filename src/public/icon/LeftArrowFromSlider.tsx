@@ -4,15 +4,23 @@ import {IconProps} from "../../shared/assets/types/types";
 
 
 export const LeftArrowFromSlider = memo(
-  forwardRef<SVGSVGElement, IconProps>(({}, ref) => (
+  forwardRef<SVGSVGElement, IconProps>(({color}, ref) => (
       <svg
-          height={100}
+          fill={"none"}
+          height={64}
           ref={ref}
+          transform={"rotate(180)"}
           viewBox={"0 0 24 24"}
-          width={100}
+          width={64}
           xmlns={"http://www.w3.org/2000/svg"}
       >
-          <path d={"m4.431 12.822 13 9A1 1 0 0 0 19 21V3a1 1 0 0 0-1.569-.823l-13 9a1.003 1.003 0 0 0 0 1.645z"} />
+          <path
+              d={"M6 12h12m0 0-5-5m5 5-5 5"}
+              stroke={color? color:"#000"}
+              strokeLinecap={"round"}
+              strokeLinejoin={"round"}
+              strokeWidth={2}
+          />
       </svg>
   )),
 );

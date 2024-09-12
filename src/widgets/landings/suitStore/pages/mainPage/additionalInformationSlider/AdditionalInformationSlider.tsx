@@ -1,10 +1,8 @@
-import { CSSProperties, MouseEventHandler, useState } from 'react'
+import { useState } from 'react'
 import Slider from 'react-slick'
 
 import s from './additionalInformationSlider.module.scss'
 
-import { RightArrowFromSlider } from '../../../../../../public'
-import { LeftArrowFromSlider } from '../../../../../../public/icon/LeftArrowFromSlider'
 import {
   Button,
   Container,
@@ -12,32 +10,11 @@ import {
   Typography,
   useIsMobile,
 } from '../../../../../../shared'
-export interface CustomArrowProps {
-  className?: string | undefined
-  currentSlide?: number | undefined
-  onClick?: MouseEventHandler<any> | undefined
-  slideCount?: number | undefined
-  style?: CSSProperties | undefined
-}
-function SampleNextArrow(props: CustomArrowProps) {
-  const { onClick } = props
+import {
+  SampleNextArrow,
+  SamplePrevArrow,
+} from '../../../../../../shared/components/arrowsFromTheSlider/ArrowsFromTheSlider'
 
-  return (
-    <Button onClick={onClick} variant={'blank'}>
-      <RightArrowFromSlider />
-    </Button>
-  )
-}
-
-function SamplePrevArrow(props: CustomArrowProps) {
-  const { onClick } = props
-
-  return (
-    <Button onClick={onClick} variant={'blank'}>
-      <LeftArrowFromSlider />
-    </Button>
-  )
-}
 export const AdditionalInformationSlider = () => {
   const isMobile = useIsMobile(720)
   const [value, setValue] = useState<number>(0)
@@ -71,7 +48,7 @@ export const AdditionalInformationSlider = () => {
   const settings = {
     arrows: !isMobile,
     beforeChange: (oldIndex: number, newIndex: number) =>
-      setValue(newIndex !== 1 ? newIndex : oldIndex),
+      setValue(newIndex !== -1 ? newIndex : oldIndex),
     className: s.slick,
     dots: isMobile,
     dotsClass: `slick-dots slick-thumb ${s.slickDotsClass}`,
