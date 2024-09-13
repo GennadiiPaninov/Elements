@@ -10,13 +10,11 @@ export const Header = () => {
   const isMobile = useIsMobile(720)
   const urlPath = useLocation().pathname
 
-  console.log(urlPath)
-
   return (
     <header className={s.header}>
-      {urlPath !== '/dapper-designs' &&
+      {!urlPath.startsWith('/dapper-designs') &&
         (isMobile ? <DropDownMenu /> : <DesktopMenu urlPath={urlPath} />)}
-      {urlPath === '/dapper-designs' && <MenuFromSuitSite />}
+      {urlPath.startsWith('/dapper-designs') && <MenuFromSuitSite />}
     </header>
   )
 }

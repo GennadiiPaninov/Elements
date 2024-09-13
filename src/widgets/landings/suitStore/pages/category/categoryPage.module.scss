@@ -1,0 +1,17 @@
+.rootContainer{
+  flex-direction: column;
+}
+.mainContent{
+  min-height: 75vh;
+}
+.titleContainer{
+  width: 90%;
+  justify-content: start;
+  padding-top:5vh;
+  flex-direction: column;
+  gap: 1rem;
+
+}
+.info{
+  color: var(--color-dark-500);
+}

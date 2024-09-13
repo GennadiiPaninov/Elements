@@ -50,7 +50,12 @@ export const SuitStoreDesktopMenu = () => {
                   <ul className={s.menu}>
                     {item.subItems.map(subItem => (
                       <li className={s.menuListItem} key={subItem.title}>
-                        <Button className={s.listButton} variant={'blank'}>
+                        <Button
+                          as={'a'}
+                          className={s.listButton}
+                          href={`/dapper-designs/collections/${subItem.path}`}
+                          variant={'blank'}
+                        >
                           <Typography className={s.menuItem} variant={'regular_text-16'}>
                             {subItem.title}
                           </Typography>

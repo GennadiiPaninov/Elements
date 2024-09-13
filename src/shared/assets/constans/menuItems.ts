@@ -3,53 +3,53 @@ export const menuItems = [
     subItems: [
       {
         subItems: [
-          { title: "Men's Wedding Suits" },
-          { title: "Men's Wedding Tuxedos" },
-          { title: "Women's Wedding Suits" },
-          { title: "Women's Wedding Tuxedos" },
-          { title: 'Prom & Homecoming' },
+          { path: 'Mens-Wedding-Suits', title: "Men's Wedding Suits" },
+          { path: 'Mens-Wedding-Tuxedos', title: "Men's Wedding Tuxedos" },
+          { path: 'Female-Wedding-Suits', title: "Women's Wedding Suits" },
+          { path: 'Female-Wedding-Tuxedos', title: "Women's Wedding Tuxedos" },
+          { path: 'Prom-And-Homecoming', title: 'Prom & Homecoming' },
         ],
         title: 'Occasions',
       },
       {
         subItems: [
-          { title: "Men's Suits & Tuxedos" },
-          { title: "Men's Suits" },
-          { title: "Men's Tuxedos" },
-          { title: "Women's Suits & Tuxedos" },
-          { title: "Women's Suits" },
-          { title: "Women's Tuxedos" },
-          { title: 'Kids & Toddlers' },
+          { path: 'Mens-Suits-And-Tuxedos', title: "Men's Suits & Tuxedos" },
+          { path: 'Mens-Suits', title: "Men's Suits" },
+          { path: 'Mens-Tuxedos', title: "Men's Tuxedos" },
+          { path: 'Female-Suits-And-Tuxedos', title: "Women's Suits & Tuxedos" },
+          { path: 'Female-Suits', title: "Women's Suits" },
+          { path: 'Female-And-Tuxedos', title: "Women's Tuxedos" },
+          { path: 'Kids-And-Toddlers', title: 'Kids & Toddlers' },
         ],
         title: 'Suit & Tuxedos',
       },
       {
         subItems: [
-          { title: "Men's Jackets" },
-          { title: "Men's Pants" },
-          { title: "Women's Jackets" },
-          { title: "Women's Pants" },
-          { title: 'Unisex Jackets' },
+          { path: 'Mens-Jackets', title: "Men's Jackets" },
+          { path: 'Mens-Pants', title: "Men's Pants" },
+          { path: 'Female-Jackets', title: "Women's Jackets" },
+          { path: 'Female-Pants', title: "Women's Pants" },
+          { path: 'Unisex-Jackets', title: 'Unisex Jackets' },
         ],
         title: 'Separates',
       },
       {
         subItems: [
-          { title: "Men's Jackets" },
-          { title: "Men's Pants" },
-          { title: "Women's Jackets" },
-          { title: "Women's Pants" },
-          { title: 'Unisex Jackets' },
+          { path: 'Ties-And-Tie', title: 'Ties & Tie' },
+          { path: 'Suit-Vests', title: 'Suit Vests' },
+          { path: 'Dress-Shoes', title: 'Dress Shoes' },
+          { path: 'Suspenders', title: 'Suspenders' },
+          { path: 'Socks', title: 'Socks' },
         ],
         title: 'Accessories',
       },
       {
         subItems: [
-          { title: 'Halfday Garment Bag' },
-          { title: 'Whiskey' },
-          { title: 'Hand Flasks' },
-          { title: 'Watches' },
-          { title: 'Leather Wallets' },
+          { path: 'Half-Day-Garment-Bag', title: 'Half Day Garment Bag' },
+          { path: 'Whiskey', title: 'Whiskey' },
+          { path: 'Hand-Flasks', title: 'Hand Flasks' },
+          { path: 'Watches', title: 'Watches' },
+          { path: 'Leather-Wallets', title: 'Leather Wallets' },
         ],
         title: 'Gifts & Extras',
       },
@@ -88,4 +88,7 @@ export const menuItems = [
     ],
     title: 'Resources & Help',
   },
-] as { subItems: { subItems?: { title: string }[]; title: string }[]; title: string }[]
+] as {
+  subItems: { subItems?: { path?: string; title: string }[]; title: string }[]
+  title: string
+}[]

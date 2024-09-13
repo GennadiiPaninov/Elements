@@ -48,11 +48,11 @@ export const SuitStoreMenu = () => {
 
   return (
     <motion.div
-      animate={{ opacity: 1, y: 0 }} // Конечные значения при появлении
+      animate={{ opacity: 1, y: 0 }}
       className={s.motionMenu}
-      exit={{ opacity: 0, y: -20 }} // Значения при исчезновении
-      initial={{ opacity: 0, y: -20 }} // Начальные значения
-      transition={{ duration: 0.3 }} // Длительность анимации
+      exit={{ opacity: 0, y: -20 }}
+      initial={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.3 }}
     >
       <ul className={s.menu}>
         <li className={s.menuListItem}>
@@ -100,6 +100,7 @@ export const SuitStoreMenu = () => {
             })}
           </>
         )}
+        {/*for the store*/}
         {rootMenu !== 'RootMenu' && (
           <Container classNameRoot={s.classNameRootBack} noWrap>
             <Button
@@ -116,6 +117,7 @@ export const SuitStoreMenu = () => {
             <HorizontalLine />
           </Container>
         )}
+        {/*Not for the store*/}
         {rootMenu !== 'RootMenu' &&
           !menuShop &&
           menuItems
@@ -136,6 +138,7 @@ export const SuitStoreMenu = () => {
                 </li>
               )
             })}
+        {/*For store categories*/}
         {menuShop &&
           menuItems
             ?.find(item => item.title === rootMenu)
@@ -144,7 +147,9 @@ export const SuitStoreMenu = () => {
               return (
                 <li className={s.menuListItem} key={item.title}>
                   <Button
+                    as={'a'}
                     className={s.listButton}
+                    href={`/dapper-designs/collections/${item.path}`}
                     onClick={() => handleChangeMenuShop(item.title)}
                     variant={'blank'}
                   >

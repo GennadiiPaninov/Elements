@@ -20,21 +20,21 @@ export const MenuFromSuitSite = () => {
       : dispatch(rootActions.setMenuState({ menuState: rootMenu == '' ? 'RootMenu' : '' }))
   }
 
-  console.log(rootMenu)
-
   return (
     <>
       <div className={s.headerGrid}>
         <Slogan />
         <div className={s.headerMenu}>
           <div className={s.h1Container}>
-            <Typography variant={'h1'}>
-              Dapper{' '}
-              <Typography className={s.designs} variant={'h1'}>
-                {' '}
-                Designs
+            <Button as={'a'} href={'/dapper-designs'} variant={'blank'}>
+              <Typography variant={'h1'}>
+                Dapper{' '}
+                <Typography className={s.designs} variant={'h1'}>
+                  {' '}
+                  Designs
+                </Typography>
               </Typography>
-            </Typography>
+            </Button>
           </div>
           {!isOneThousand && (
             <ul className={s.menuList}>
