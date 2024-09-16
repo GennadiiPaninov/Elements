@@ -26,7 +26,7 @@ export const MenuFromSuitSite = () => {
         <Slogan />
         <div className={s.headerMenu}>
           <div className={s.h1Container}>
-            <Button as={'a'} href={'/dapper-designs'} variant={'blank'}>
+            <Button as={'a'} className={s.titleApp} href={'/dapper-designs'} variant={'blank'}>
               <Typography variant={'h1'}>
                 Dapper{' '}
                 <Typography className={s.designs} variant={'h1'}>
@@ -63,7 +63,12 @@ export const MenuFromSuitSite = () => {
             )}
             {!isMobile && (
               <li className={s.menuListItem}>
-                <Button variant={'blank'}>
+                <Button
+                  as={'a'}
+                  className={s.accountRsc}
+                  href={'/dapper-designs/account'}
+                  variant={'blank'}
+                >
                   <Account />
                   <Typography variant={'regular_text-14'}>Account</Typography>
                 </Button>

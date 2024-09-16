@@ -5,7 +5,9 @@
   grid-template-rows: 30% 70%;
 
 }
-
+.titleApp{
+  color: var(--color-dark-700);
+}
 .headerMenu{
   width: 100%;
   padding: 0 2% 0 2%;
@@ -45,6 +47,9 @@
   .headerMenu{
     grid-template-columns: 70% 30% ;
   }
+}
+.accountRsc{
+  color: var(--color-dark-900);
 }
 
 

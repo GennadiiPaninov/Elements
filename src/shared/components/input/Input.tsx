@@ -14,12 +14,14 @@ import { clsx } from 'clsx'
 import s from './input.module.scss'
 
 import { Close, Eye, EyeOff, LocationPointer, Search_outline } from '../../../public'
+import { Button } from '../buttons'
 
 type InputTypes = 'email' | 'location' | 'password' | 'search' | 'text'
 
 export type InputProps = {
   errorMessage?: null | string
   fullWidth?: boolean
+  inputClassName: string
   isShowButton?: boolean
   label?: ReactNode
   onButtonClick?: () => void // for datePicker type only
@@ -52,6 +54,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
       disabled,
       errorMessage,
       fullWidth,
+      inputClassName,
       label,
       onButtonClick,
       onChange,
@@ -69,7 +72,7 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
 
     const classNames = {
       clearButton: s.clearButton,
-      input: clsx(s.input, showError && s.error, disabled && s.disabled),
+      input: clsx(s.input, showError && s.error, disabled && s.disabled, inputClassName),
       input_wrapper: clsx(
         s.input_wrapper,
         disabled && s.disabled,
@@ -133,14 +136,15 @@ export const Input = forwardRef<ElementRef<'input'>, InputProps>(
             </button>
           )}
           {type === 'password' && (
-            <button
+            <Button
               aria-label={`${showPassword ? 'hide' : 'show'} password`}
               className={s.iconStart}
               onClick={showPasswordHandler}
               type={'button'}
+              variant={'blank'}
             >
               {showPassword ? <Eye size={20} /> : <EyeOff size={20} />}
-            </button>
+            </Button>
           )}
           {isShowButton && (
             <button className={s.iconEnd} onClick={onClearClickHandler} type={'button'}>
