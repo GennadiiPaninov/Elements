@@ -2806,4 +2806,4 @@ const AnimationSvg = () => {
     );
 }
 
-export default React.memo(AnimationSvg);
+export const AnimationSvgComponent =  React.memo(AnimationSvg);

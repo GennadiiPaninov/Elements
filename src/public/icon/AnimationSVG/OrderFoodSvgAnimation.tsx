@@ -2466,4 +2466,4 @@ const  OrderFoodSvgAnimation=()=> {
     );
 }
 
-export default React.memo(OrderFoodSvgAnimation);
+export const OrderFoodSvgAnimationComponent =  React.memo(OrderFoodSvgAnimation);

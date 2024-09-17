@@ -1,18 +1,19 @@
 import s from './animation.module.scss'
 
-import AnimationSvg from '../../public/icon/AnimationSVG/AnimationSvg'
-import OrderFoodSvgAnimation from '../../public/icon/AnimationSVG/OrderFoodSvgAnimation'
+import { AnimationSvgComponent } from '../../public/icon/AnimationSVG/AnimationSvg'
+import { OrderFoodSvgAnimationComponent } from '../../public/icon/AnimationSVG/OrderFoodSvgAnimation'
 import { Container } from '../../shared'
+import { CubeAnimation } from '../../shared/components/cubeAnimation/CubeAnimation'
 export const Animation = () => {
   return (
-    <Container noWrap>
+    <Container classNameRoot={s.rootAnimationContainer} noWrap>
       <Container classNameRoot={s.wrapper} noWrap>
         {' '}
-        <AnimationSvg />
+        <AnimationSvgComponent />
+        <OrderFoodSvgAnimationComponent />
       </Container>
-      <Container classNameRoot={s.wrapper} noWrap>
-        {' '}
-        <OrderFoodSvgAnimation />
+      <Container classNameRoot={s.canvasWrapper} noWrap>
+        <CubeAnimation />
       </Container>
     </Container>
   )

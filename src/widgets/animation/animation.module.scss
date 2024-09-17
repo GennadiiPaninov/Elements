@@ -1,3 +1,13 @@
+.rootAnimationContainer{
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
 .wrapper{
-  width: 20%;
+  width: 60%;
+  height: 100vh;
+}
+.canvasWrapper{
+  width: 100%;
+  height: 100vh;
 }
