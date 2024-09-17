@@ -24,6 +24,11 @@ export const SuitStoreDesktopMenu = () => {
   const handleMouseLeave = () => {
     dispatch(rootActions.setMenuState({ menuState: '' }))
   }
+
+  const handleChangeCategory = (categoryState: string) => {
+    dispatch(rootActions.setCategory({ categoryState: categoryState }))
+    dispatch(rootActions.setMenuState({ menuState: '' }))
+  }
   const style = {
     root: clsx(rootMenu && rootMenu == 'Shop' ? s.root : s.rootOther),
   }
@@ -53,7 +58,7 @@ export const SuitStoreDesktopMenu = () => {
                         <Button
                           as={'a'}
                           className={s.listButton}
-                          href={`/dapper-designs/collections/${subItem.path}`}
+                          onClick={() => handleChangeCategory(subItem.path ? subItem.path : '')}
                           variant={'blank'}
                         >
                           <Typography className={s.menuItem} variant={'regular_text-16'}>

@@ -12,9 +12,9 @@ export const Header = () => {
 
   return (
     <header className={s.header}>
-      {!urlPath.startsWith('/dapper-designs') &&
+      {!urlPath.includes('/dapper-designs') &&
         (isMobile ? <DropDownMenu /> : <DesktopMenu urlPath={urlPath} />)}
-      {urlPath.startsWith('/dapper-designs') && <MenuFromSuitSite />}
+      {urlPath.includes('/dapper-designs') && <MenuFromSuitSite />}
     </header>
   )
 }

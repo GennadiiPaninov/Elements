@@ -45,6 +45,11 @@ export const SuitStoreMenu = () => {
   if (!rootMenu || !isMobile) {
     return
   }
+  const handleChangeCategory = (categoryState: string) => {
+    dispatch(rootActions.setCategory({ categoryState: categoryState }))
+    dispatch(rootActions.setMenuShop({ menuState: '' }))
+    dispatch(rootActions.setMenuState({ menuState: '' }))
+  }
 
   return (
     <motion.div
@@ -149,8 +154,10 @@ export const SuitStoreMenu = () => {
                   <Button
                     as={'a'}
                     className={s.listButton}
-                    href={`/dapper-designs/collections/${item.path}`}
-                    onClick={() => handleChangeMenuShop(item.title)}
+                    onClick={() => {
+                      handleChangeMenuShop(item.title)
+                      handleChangeCategory(item.path ? item.path : '')
+                    }}
                     variant={'blank'}
                   >
                     <Typography className={s.menuItem} variant={'regular_text-16'}>

@@ -21,7 +21,7 @@ type InputTypes = 'email' | 'location' | 'password' | 'search' | 'text'
 export type InputProps = {
   errorMessage?: null | string
   fullWidth?: boolean
-  inputClassName: string
+  inputClassName?: string
   isShowButton?: boolean
   label?: ReactNode
   onButtonClick?: () => void // for datePicker type only
